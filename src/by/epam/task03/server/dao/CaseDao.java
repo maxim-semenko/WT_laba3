@@ -20,7 +20,11 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
@@ -130,7 +134,7 @@ public class CaseDao {
             DocumentBuilder db = dbf.newDocumentBuilder();
             Document doc = db.newDocument();
             Element rootEle = doc.createElement("cases");
-            for(Case _case : getAll()) {
+            for (Case _case : getAll()) {
                 Element caseEle = ServiceFactory.getInstance().getCaseService().createNode(doc, _case);
                 rootEle.appendChild(caseEle);
             }

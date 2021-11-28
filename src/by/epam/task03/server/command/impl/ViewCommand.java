@@ -1,9 +1,8 @@
 package by.epam.task03.server.command.impl;
 
-import by.epam.task03.server.model.Case;
 import by.epam.task03.server.command.Command;
-import by.epam.task03.server.command.exception.CommandException;
 import by.epam.task03.server.model.AuthType;
+import by.epam.task03.server.model.Case;
 import by.epam.task03.server.service.ServiceFactory;
 
 import java.util.List;
@@ -15,7 +14,7 @@ public class ViewCommand implements Command {
 
     @Override
     public String execute(Object caller, String request) {
-        if (ServiceFactory.getInstance().getAuthService().getAuthType(caller) == AuthType.UNAUTH){
+        if (ServiceFactory.getInstance().getAuthService().getAuthType(caller) == AuthType.UNAUTH) {
             return "Should be authenticated";
         }
 

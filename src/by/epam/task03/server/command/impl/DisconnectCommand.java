@@ -1,7 +1,6 @@
 package by.epam.task03.server.command.impl;
 
 import by.epam.task03.server.command.Command;
-import by.epam.task03.server.command.exception.CommandException;
 import by.epam.task03.server.model.AuthType;
 import by.epam.task03.server.service.ServiceFactory;
 
